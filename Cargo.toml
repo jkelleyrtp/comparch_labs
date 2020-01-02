@@ -1,0 +1,7 @@
+ [workspace]
+members = [ "rust/frontend",
+            "rust/cpu_backend",
+            "rust/backend/example", 
+            "rust/backend/verilated", 
+            "rust/backend/verilated-module", 
+            "rust/backend/verilator"]

@@ -1,0 +1,264 @@
+#! /usr/local/Cellar/icarus-verilog/10.2_1/bin/vvp
+:ivl_version "10.2 (stable)" "(v10_2)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x7fdc84402410 .scope module, "cpu_test" "cpu_test" 2 7;
+ .timescale 0 0;
+v0x7fdc84712100_0 .var "clk", 0 0;
+v0x7fdc847121a0_0 .var "dump_fn", 1023 0;
+v0x7fdc84712250_0 .var "init_data", 0 0;
+v0x7fdc84712300_0 .var "mem_data_fn", 1023 0;
+v0x7fdc847123b0_0 .var "mem_text_fn", 1023 0;
+v0x7fdc847124a0_0 .var "reset", 0 0;
+S_0x7fdc84402570 .scope module, "cpu" "fake_cpu" 2 17, 3 7 0, S_0x7fdc84402410;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk"
+    .port_info 1 /INPUT 1 "reset"
+v0x7fdc84711780_0 .net "FUNCT_C", 5 0, L_0x7fdc84514120;  1 drivers
+v0x7fdc84711840_0 .net "INS_A", 31 0, L_0x7fdc84502620;  1 drivers
+v0x7fdc847118e0_0 .var "INS_B", 31 0;
+v0x7fdc84711990_0 .var "INS_C", 31 0;
+v0x7fdc84711a40_0 .net "OP_B", 5 0, L_0x7fdc845156b0;  1 drivers
+v0x7fdc84711b30_0 .var "OP_C", 5 0;
+v0x7fdc84711be0_0 .net "PC_A", 31 0, v0x7fdc84711660_0;  1 drivers
+v0x7fdc84711cc0_0 .var "PC_B", 31 0;
+v0x7fdc84711d50_0 .var "PC_C", 31 0;
+v0x7fdc84711e60_0 .net "RS_C", 4 0, L_0x7fdc845141c0;  1 drivers
+v0x7fdc84711f10_0 .net "RT_C", 4 0, L_0x7fdc84514ec0;  1 drivers
+v0x7fdc84711fc0_0 .net "clk", 0 0, v0x7fdc84712100_0;  1 drivers
+v0x7fdc84712050_0 .net "reset", 0 0, v0x7fdc847124a0_0;  1 drivers
+L_0x7fdc845156b0 .part v0x7fdc847118e0_0, 26, 6;
+L_0x7fdc84514120 .part v0x7fdc84711990_0, 0, 6;
+L_0x7fdc845141c0 .part v0x7fdc84711990_0, 21, 5;
+L_0x7fdc84514ec0 .part v0x7fdc84711990_0, 16, 5;
+S_0x7fdc844026d0 .scope module, "cpumem" "memory" 3 28, 4 12 0, S_0x7fdc84402570;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "PC"
+    .port_info 1 /OUTPUT 32 "instruction"
+    .port_info 2 /OUTPUT 32 "data_out"
+    .port_info 3 /INPUT 32 "data_in"
+    .port_info 4 /INPUT 32 "data_addr"
+    .port_info 5 /INPUT 1 "clk"
+    .port_info 6 /INPUT 1 "wr_en"
+L_0x7fdc84502620 .functor BUFZ 32, L_0x7fdc84712570, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>;
+L_0x7fdc84514540 .functor BUFZ 32, L_0x7fdc84515d50, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>;
+v0x7fdc84402920_0 .net "PC", 31 0, v0x7fdc84711660_0;  alias, 1 drivers
+v0x7fdc84710570_0 .net *"_s0", 31 0, L_0x7fdc84712570;  1 drivers
+v0x7fdc84710630_0 .net *"_s10", 31 0, L_0x7fdc84515d50;  1 drivers
+v0x7fdc847106f0_0 .net *"_s13", 11 0, L_0x7fdc845144a0;  1 drivers
+v0x7fdc847107a0_0 .net *"_s14", 13 0, L_0x7fdc845146d0;  1 drivers
+L_0x10ca28050 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0x7fdc84710890_0 .net *"_s17", 1 0, L_0x10ca28050;  1 drivers
+v0x7fdc84710940_0 .net *"_s3", 11 0, L_0x7fdc84712630;  1 drivers
+v0x7fdc847109f0_0 .net *"_s4", 13 0, L_0x7fdc847126f0;  1 drivers
+L_0x10ca28008 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0x7fdc84710aa0_0 .net *"_s7", 1 0, L_0x10ca28008;  1 drivers
+v0x7fdc84710bb0_0 .net "clk", 0 0, v0x7fdc84712100_0;  alias, 1 drivers
+L_0x10ca280e0 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x7fdc84710c50_0 .net "data_addr", 31 0, L_0x10ca280e0;  1 drivers
+L_0x10ca28098 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x7fdc84710d00_0 .net "data_in", 31 0, L_0x10ca28098;  1 drivers
+v0x7fdc84710db0_0 .net "data_out", 31 0, L_0x7fdc84514540;  1 drivers
+v0x7fdc84710e60_0 .net "instruction", 31 0, L_0x7fdc84502620;  alias, 1 drivers
+v0x7fdc84710f10 .array "mem", 0 4095, 31 0;
+L_0x10ca28128 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x7fdc84710fb0_0 .net "wr_en", 0 0, L_0x10ca28128;  1 drivers
+E_0x7fdc84402300 .event edge, v0x7fdc84402920_0;
+E_0x7fdc84402110 .event edge, v0x7fdc84710c50_0;
+E_0x7fdc844028f0 .event posedge, v0x7fdc84710bb0_0;
+L_0x7fdc84712570 .array/port v0x7fdc84710f10, L_0x7fdc847126f0;
+L_0x7fdc84712630 .part v0x7fdc84711660_0, 2, 12;
+L_0x7fdc847126f0 .concat [ 12 2 0 0], L_0x7fdc84712630, L_0x10ca28008;
+L_0x7fdc84515d50 .array/port v0x7fdc84710f10, L_0x7fdc845146d0;
+L_0x7fdc845144a0 .part L_0x10ca280e0, 2, 12;
+L_0x7fdc845146d0 .concat [ 12 2 0 0], L_0x7fdc845144a0, L_0x10ca28050;
+S_0x7fdc847110c0 .scope module, "pc_incr" "counter" 3 20, 5 6 0, S_0x7fdc84402570;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 32 "count"
+    .port_info 1 /INPUT 1 "clk"
+    .port_info 2 /INPUT 1 "reset"
+P_0x7fdc84711280 .param/l "increment" 0 5 9, +C4<00000000000000000000000000000100>;
+P_0x7fdc847112c0 .param/l "init_val" 0 5 10, +C4<00000000000000000000000000000000>;
+P_0x7fdc84711300 .param/l "width" 0 5 8, +C4<00000000000000000000000000100000>;
+v0x7fdc847115a0_0 .net "clk", 0 0, v0x7fdc84712100_0;  alias, 1 drivers
+v0x7fdc84711660_0 .var "count", 31 0;
+v0x7fdc847116f0_0 .net "reset", 0 0, v0x7fdc847124a0_0;  alias, 1 drivers
+E_0x7fdc84711550 .event posedge, v0x7fdc847116f0_0, v0x7fdc84710bb0_0;
+    .scope S_0x7fdc847110c0;
+T_0 ;
+    %wait E_0x7fdc84711550;
+    %load/vec4 v0x7fdc847116f0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 32;
+    %assign/vec4 v0x7fdc84711660_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x7fdc84711660_0;
+    %addi 4, 0, 32;
+    %assign/vec4 v0x7fdc84711660_0, 0;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x7fdc844026d0;
+T_1 ;
+    %wait E_0x7fdc844028f0;
+    %load/vec4 v0x7fdc84710fb0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.0, 8;
+    %load/vec4 v0x7fdc84710d00_0;
+    %load/vec4 v0x7fdc84710c50_0;
+    %parti/s 12, 2, 3;
+    %pad/u 14;
+    %ix/vec4 4;
+    %store/vec4a v0x7fdc84710f10, 4, 0;
+T_1.0 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x7fdc844026d0;
+T_2 ;
+    %wait E_0x7fdc84402110;
+    %load/vec4 v0x7fdc84710c50_0;
+    %parti/s 2, 0, 2;
+    %or/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.0, 8;
+    %vpi_call 4 53 "$display", "Warning: misaligned data_addr access, truncating: %h", v0x7fdc84710c50_0 {0 0 0};
+T_2.0 ;
+    %load/vec4 v0x7fdc84710c50_0;
+    %parti/s 18, 14, 5;
+    %or/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.2, 8;
+    %vpi_call 4 56 "$display", "Error: data_addr outside implemented memory range: %h", v0x7fdc84710c50_0 {0 0 0};
+    %vpi_call 4 57 "$stop" {0 0 0};
+T_2.2 ;
+    %jmp T_2;
+    .thread T_2, $push;
+    .scope S_0x7fdc844026d0;
+T_3 ;
+    %wait E_0x7fdc84402300;
+    %load/vec4 v0x7fdc84402920_0;
+    %parti/s 2, 0, 2;
+    %or/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_3.0, 8;
+    %vpi_call 4 63 "$display", "Warning: misaligned PC access, truncating: %h", v0x7fdc84402920_0 {0 0 0};
+T_3.0 ;
+    %load/vec4 v0x7fdc84402920_0;
+    %parti/s 18, 14, 5;
+    %or/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_3.2, 8;
+    %vpi_call 4 66 "$display", "Error: PC outside implemented memory range: %h", v0x7fdc84402920_0 {0 0 0};
+    %vpi_call 4 67 "$stop" {0 0 0};
+T_3.2 ;
+    %jmp T_3;
+    .thread T_3, $push;
+    .scope S_0x7fdc84402570;
+T_4 ;
+    %wait E_0x7fdc844028f0;
+    %load/vec4 v0x7fdc84711be0_0;
+    %assign/vec4 v0x7fdc84711cc0_0, 0;
+    %load/vec4 v0x7fdc84711840_0;
+    %assign/vec4 v0x7fdc847118e0_0, 0;
+    %load/vec4 v0x7fdc84711cc0_0;
+    %assign/vec4 v0x7fdc84711d50_0, 0;
+    %load/vec4 v0x7fdc847118e0_0;
+    %assign/vec4 v0x7fdc84711990_0, 0;
+    %load/vec4 v0x7fdc84711a40_0;
+    %assign/vec4 v0x7fdc84711b30_0, 0;
+    %jmp T_4;
+    .thread T_4;
+    .scope S_0x7fdc84402410;
+T_5 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fdc84712250_0, 0, 1;
+    %end;
+    .thread T_5;
+    .scope S_0x7fdc84402410;
+T_6 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fdc84712100_0, 0, 1;
+    %end;
+    .thread T_6;
+    .scope S_0x7fdc84402410;
+T_7 ;
+    %delay 10, 0;
+    %load/vec4 v0x7fdc84712100_0;
+    %nor/r;
+    %store/vec4 v0x7fdc84712100_0, 0, 1;
+    %jmp T_7;
+    .thread T_7;
+    .scope S_0x7fdc84402410;
+T_8 ;
+    %vpi_func 2 31 "$value$plusargs" 32, "mem_text_fn=%s", v0x7fdc847123b0_0 {0 0 0};
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_8.0, 8;
+    %vpi_call 2 32 "$display", "ERROR: provide +mem_text_fn=[path to .text memory image] argument" {0 0 0};
+    %vpi_call 2 33 "$finish" {0 0 0};
+T_8.0 ;
+    %vpi_func 2 35 "$value$plusargs" 32, "mem_data_fn=%s", v0x7fdc84712300_0 {0 0 0};
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_8.2, 8;
+    %vpi_call 2 36 "$display", "INFO: +mem_data_fn=[path to .data memory image] argument not provided; data memory segment uninitialized" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fdc84712250_0, 0, 1;
+T_8.2 ;
+    %vpi_func 2 40 "$value$plusargs" 32, "dump_fn=%s", v0x7fdc847121a0_0 {0 0 0};
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_8.4, 8;
+    %vpi_call 2 41 "$display", "ERROR: provide +dump_fn=[path for VCD dump] argument" {0 0 0};
+    %vpi_call 2 42 "$finish" {0 0 0};
+T_8.4 ;
+    %vpi_call 2 50 "$readmemh", v0x7fdc847123b0_0, v0x7fdc84710f10, 32'sb00000000000000000000000000000000 {0 0 0};
+    %load/vec4 v0x7fdc84712250_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_8.6, 8;
+    %vpi_call 2 52 "$readmemh", v0x7fdc84712300_0, v0x7fdc84710f10, 32'sb00000000000000000000100000000000 {0 0 0};
+T_8.6 ;
+    %vpi_call 2 57 "$dumpfile", v0x7fdc847121a0_0 {0 0 0};
+    %vpi_call 2 58 "$dumpvars" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fdc847124a0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fdc847124a0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fdc847124a0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 69 "$display", "Time | PC       | Instruction" {0 0 0};
+    %pushi/vec4 3, 0, 32;
+T_8.8 %dup/vec4;
+    %pushi/vec4 0, 0, 32;
+    %cmp/s;
+    %jmp/1xz T_8.9, 5;
+    %jmp/1 T_8.9, 4;
+    %pushi/vec4 1, 0, 32;
+    %sub;
+    %vpi_call 2 71 "$display", "%4t | %h | %h", $time, v0x7fdc84711be0_0, v0x7fdc84711840_0 {0 0 0};
+    %delay 20, 0;
+    %jmp T_8.8;
+T_8.9 ;
+    %pop/vec4 1;
+    %vpi_call 2 73 "$display", "... more execution (see waveform)" {0 0 0};
+    %delay 2000, 0;
+    %vpi_call 2 78 "$finish" {0 0 0};
+    %end;
+    .thread T_8;
+# The file index is used to find the file name in the following table.
+:file_names 6;
+    "N/A";
+    "<interactive>";
+    "cpus/fake_cpu/fake_cpu.t.v";
+    "./cpus/fake_cpu/fake_cpu.v";
+    "./modules/memory/memory.v";
+    "./modules/counter/counter.v";

@@ -1,0 +1,15 @@
+[package]
+name = "cpu_backend"
+version = "0.1.0"
+authors = ["Jonathan Kelley <jkelleyrtp@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+verilated = { path = "../backend/verilated" }
+verilated-module = { path = "../backend/verilated-module" }
+tungstenite = "0.9.2"
+
+[build-dependencies]
+verilator = { path = "../backend/verilator", features=["gen","module"] }
