@@ -97,6 +97,13 @@ module cpu (
                 .clk        (clk),                      
                 .wr_en      (MemWriteReg));
 
+
+    alu_results
+    operand_As
+    operand_Bs
+    ALUOp
+
+
     // ALU
     alu ALU(.result(alu_result),                        
             .iszero(iszero), 
