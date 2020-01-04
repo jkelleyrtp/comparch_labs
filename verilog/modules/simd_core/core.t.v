@@ -1,6 +1,6 @@
 `include "modules/simd_core/core.v"
 // From the top level directory:
-// iverilog -o modules/simd_core/out modules/simd_core/core.t.v && ./modules/simd_core/out
+// iverilog -o modules/simd_core/out.a modules/simd_core/core.t.v && ./modules/simd_core/out.a
 
 module simd_core_test();
 
